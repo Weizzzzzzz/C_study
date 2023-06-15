@@ -28,5 +28,17 @@ void Displayboaed(char board[ROW][COL], int row, int col)
             }
         }
         printf("\n");
+        if(i < row-1)
+        {
+            for (j = 0; j < col; j++)
+            {
+                printf("---");
+                if(j < col-1)
+                {
+                    printf("|");
+                }
+            }
+        }
+        printf("\n");
     }
 }
