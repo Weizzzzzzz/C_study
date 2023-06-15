@@ -12,10 +12,10 @@ void menu()
 
 void game()
 {
-    char board[Row][Col] = {0};
+    char board[ROW][COL] = {0};
     //初始化棋盘
-    Initboard(board, Row, Col);
-    Displayboaed(board, Row, Col);
+    Initboard(board, ROW, COL);
+    Displayboaed(board, ROW, COL);
     //下棋
 }
 

@@ -1,6 +1,6 @@
 #include "game.h"
 
-void Initboard(char board[Row][Col], int row, int col)
+void Initboard(char board[ROW][COL], int row, int col)
 {
     int i = 0;
     for (i = 0; i < row; i++)
@@ -13,16 +13,16 @@ void Initboard(char board[Row][Col], int row, int col)
     }
 }
 
-void Displayboaed(char board[Row][Col], int row, int col)
+void Displayboaed(char board[ROW][COL], int row, int col)
 {
     int i = 0;
     for (i = 0; i < row; i++)
     {
         int j = 0;
-        for (j = 0; j < Col; j++)
+        for (j = 0; j < col; j++)
         {
             printf(" %c ", board[i][j]);
-            if(j < Col-1)
+            if(j < col-1)
             {
                 printf("|");
             }
