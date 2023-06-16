@@ -12,15 +12,30 @@ void menu()
 
 void game()
 {
+    int ret = 0;
+
     char board[ROW][COL] = {0};
     //初始化棋盘
     Initboard(board, ROW, COL);
     Displayboaed(board, ROW, COL);
-    //下棋
+    // 下棋
+    while(1)
+    {
+        PlayerMove(board, ROW, COL);
+        // 判断输赢
+        ret = Is_Win(board, ROW, COL);
+        Displayboaed(board, ROW, COL);
+        ComputerMove(board, ROW, COL);
+        // 判断输赢
+        ret = Is_Win(board, ROW, COL);
+        Displayboaed(board, ROW, COL);
+    }
 }
 
 int main()
 {
+    srand((unsigned int)time(NULL));
+
     int input = 0;
     do
     {
