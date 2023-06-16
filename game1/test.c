@@ -24,12 +24,23 @@ void game()
         PlayerMove(board, ROW, COL);
         // 判断输赢
         ret = Is_Win(board, ROW, COL);
+        if(ret != 'C')
+            break;
         Displayboaed(board, ROW, COL);
         ComputerMove(board, ROW, COL);
         // 判断输赢
         ret = Is_Win(board, ROW, COL);
+        if(ret != 'C')
+            break;
         Displayboaed(board, ROW, COL);
     }
+    if(ret == '*')
+        printf("玩家胜\n");
+    else if(ret == '#')
+        printf("电脑胜\n");
+    else
+        printf("平局\n");
+    Displayboaed(board, ROW, COL);
 }
 
 int main()

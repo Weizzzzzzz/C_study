@@ -4,7 +4,7 @@
 
 #define ROW 3
 #define COL 3
-#define chess 3
+// #define chess 3
 
 // ≥ı ºªØ∆Â≈Ã
 void Initboard(char board[ROW][COL], int row, int col);
