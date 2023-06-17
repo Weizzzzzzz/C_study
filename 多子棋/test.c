@@ -15,28 +15,28 @@ void game()
     int ret = 0;
 
     char board[ROW][COL] = {0};
-    //初始化棋盘
+    // 初始化棋盘
     Initboard(board, ROW, COL);
     Displayboaed(board, ROW, COL);
     // 下棋
-    while(1)
+    while (1)
     {
         PlayerMove(board, ROW, COL);
+        Displayboaed(board, ROW, COL);
         // 判断输赢
         ret = Is_Win(board, ROW, COL);
-        if(ret != 'C')
+        if (ret != 'C')
             break;
-        Displayboaed(board, ROW, COL);
         ComputerMove(board, ROW, COL);
+        Displayboaed(board, ROW, COL);
         // 判断输赢
         ret = Is_Win(board, ROW, COL);
-        if(ret != 'C')
+        if (ret != 'C')
             break;
-        Displayboaed(board, ROW, COL);
     }
-    if(ret == '*')
+    if (ret == '*')
         printf("玩家胜\n");
-    else if(ret == '#')
+    else if (ret == '#')
         printf("电脑胜\n");
     else
         printf("平局\n");
@@ -53,18 +53,18 @@ int main()
         menu();
         printf("请选择:>");
         scanf("%d", &input);
-        switch(input)
+        switch (input)
         {
-            case 1:
-                game();
-                break;
-            case 0:
-                printf("退出游戏\n");
-                break;
-            default:
-                printf("输入错误,请重新输入\n");
+        case 1:
+            game();
+            break;
+        case 0:
+            printf("退出游戏\n");
+            break;
+        default:
+            printf("输入错误,请重新输入\n");
         }
-    } while(input);
-    
+    } while (input);
+
     return 0;
 }

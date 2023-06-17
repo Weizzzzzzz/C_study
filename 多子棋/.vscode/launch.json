@@ -33,8 +33,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/code/c/game1",
-      "program": "d:/code/c/game1/build/Debug/outDebug",
+      "cwd": "d:/code/c/多子棋",
+      "program": "d:/code/c/多子棋/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "D:/mingw64/bin/gdb.exe",
       "setupCommands": [

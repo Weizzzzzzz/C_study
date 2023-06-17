@@ -4,19 +4,19 @@
 
 #define ROW 3
 #define COL 3
-// #define chess 3
+#define chess 3
 
-// ³õÊ¼»¯ÆåÅÌ
+//åˆå§‹åŒ–æ£‹ç›˜
 void Initboard(char board[ROW][COL], int row, int col);
 
-// ´òÓ¡ÆåÅÌ
+//æ‰“å°æ£‹ç›˜
 void Displayboaed(char board[ROW][COL], int row, int col);
 
-//Íæ¼ÒÂä×Ó
+//ç©å®¶è½å­
 void PlayerMove(char board[ROW][COL], int row, int col);
 
-//µçÄÔÂä×Ó
+//ç”µè„‘è½å­
 void ComputerMove(char board[ROW][COL], int row, int col);
 
-//ÅĞ¶ÏÊäÓ®
+//åˆ¤æ–­èƒœè´Ÿ
 char Is_Win(char board[ROW][COL], int row, int col);
