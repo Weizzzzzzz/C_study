@@ -67,18 +67,20 @@
 
 // void reverse(char arr[], int left, int right)
 // {
-//     char tmp = arr[left];
-//     arr[left] = arr[right];
-//     arr[right] = tmp;
 //     if (left < right)
+//     {
+//         char tmp = arr[left];
+//         arr[left] = arr[right];
+//         arr[right] = tmp;
 //         reverse(arr, left + 1, right - 1);
+//     }
 // }
 
 // int main()
 // {
-//     char arr[] = "abcdef";
+//     char arr[] = "abcdefg";
 //     int left = 0;
-//     int right = my_strlen(arr);
+//     int right = my_strlen(arr) - 1;
 //     reverse(arr, left, right);
 //     printf("%s\n", arr);
 
@@ -203,23 +205,23 @@
 // }
 
 // 变长数组
-int main()
-{
-    // 创建数组
-    int n = 0;
-    scanf("%d", &n);
-    int arr[n];
-    // 输入
-    int i = 0;
-    for (i = 0; i < n; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-    // 输出
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
+// int main()
+// {
+//     // 创建数组
+//     int n = 0;
+//     scanf("%d", &n);
+//     int arr[n];
+//     // 输入
+//     int i = 0;
+//     for (i = 0; i < n; i++)
+//     {
+//         scanf("%d", &arr[i]);
+//     }
+//     // 输出
+//     for (i = 0; i < n; i++)
+//     {
+//         printf("%d ", arr[i]);
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
