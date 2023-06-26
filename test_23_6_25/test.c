@@ -21,3 +21,10 @@
 //     return 0;
 // }
 
+#include <stdio.h>
+
+int main() {
+    int a = 1234;
+    printf("%#o %#X",a,a);
+    return 0;
+}
