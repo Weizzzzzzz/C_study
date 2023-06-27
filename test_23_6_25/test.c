@@ -21,10 +21,22 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main() {
+//     int a = 1234;
+//     printf("%#o %#X",a,a);
+//     return 0;
+// }
+
 #include <stdio.h>
 
-int main() {
-    int a = 1234;
-    printf("%#o %#X",a,a);
+int main()
+{
+    char a = 0;
+    int b = 0;
+    float c = 0;
+    scanf("%c%d%f", &a, &b, &c);
+    printf("%c %d %.6f", a, b, c);
     return 0;
 }
