@@ -29,14 +29,26 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     char a = 0;
+//     int b = 0;
+//     float c = 0;
+//     scanf("%c%d%f", &a, &b, &c);
+//     printf("%c %d %.6f", a, b, c);
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    char a = 0;
+    int a = 0;
     int b = 0;
-    float c = 0;
-    scanf("%c%d%f", &a, &b, &c);
-    printf("%c %d %.6f", a, b, c);
+    int c = 0;
+    scanf("%d%d%d", &a, &b, &c);
+    printf("%d%8d%8d", a, b, c);
     return 0;
 }
