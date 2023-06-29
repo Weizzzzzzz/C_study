@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "d:/code/c/test_23_6_25",
-      "program": "d:/code/c/test_23_6_25/build/Debug/outDebug",
+      "program": "d:/code/c/test_23_6_25/build/Release/outRelease",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
