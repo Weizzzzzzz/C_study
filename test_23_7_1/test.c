@@ -71,15 +71,53 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     float n = 0;
+//     float h = 0;
+//     float m = 0;
+//     scanf("%f %f %f", &n, &h, &m);
+//     printf("%d\n", (int)(n - m / h));
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     float f = 0.0;
+//     float c = 0.0;
+//     scanf("%f", &f);
+//     c = 5.0 / 9 * (f - 32);
+//     printf("%.3f", c);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     float r = 0.0;
+//     scanf("%f", &r);
+//     printf("%.2f", 3.14 * r * r);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    float n = 0;
-    float h = 0;
-    float m = 0;
-    scanf("%f %f %f", &n, &h, &m);
-    printf("%d\n", (int)(n - m / h));
+    float r1 = 0.0;
+    float r2 = 0.0;
+    float r = 0.0;
+    scanf("%f %f", &r1, &r2);
+    r = (r1 * r2) / (r1 + r2);
+    printf("%.1f", r);
 
     return 0;
 }
