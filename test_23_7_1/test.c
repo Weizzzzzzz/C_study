@@ -108,16 +108,47 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     float r1 = 0.0;
+//     float r2 = 0.0;
+//     float r = 0.0;
+//     scanf("%f %f", &r1, &r2);
+//     r = (r1 * r2) / (r1 + r2);
+//     printf("%.1f", r);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     float pi = 3.14;
+//     int h = 0;
+//     int r = 0;
+//     float V = 0.0;
+//     int n = 0;
+//     scanf("%d %d", &h, &r);
+//     V = pi * h * r * r;
+//     n = (10000 / V) + 1;
+//     printf("%d", n);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    float r1 = 0.0;
-    float r2 = 0.0;
-    float r = 0.0;
-    scanf("%f %f", &r1, &r2);
-    r = (r1 * r2) / (r1 + r2);
-    printf("%.1f", r);
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    scanf("%d %d", &a, &b);
+    c = b + (b - a);
+    printf("%d", c);
 
     return 0;
 }
