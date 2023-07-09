@@ -38,39 +38,65 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// long long is_GCD(long long n, long long m)
+// {
+//     while (n % m)
+//     {
+//         long long tmp = n % m;
+//         n = m;
+//         m = tmp;
+//     }
+//     return m;
+// }
+
+// long long is_LCM(long long n, long long m, long long G)
+// {
+//     long long L = (n * m) / G;
+//     return L;
+// }
+
+// int main()
+// {
+//     long long n = 0;
+//     long long m = 0;
+//     long long G = 0;
+//     long long L = 0;
+//     // 输入
+//     scanf("%lld %lld", &n, &m);
+//     // 求最大公约数
+//     G = is_GCD(n, m);
+//     // 求最小公倍数
+//     L = is_LCM(n, m, G);
+//     // 输出
+//     printf("%lld\n", G + L); 
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
-long long is_GCD(long long n, long long m)
+long long change(long long n)
 {
-    while (n % m)
+    long a = 0;
+    a = n % 10;
+    n /= 10;
+    if (n)
     {
-        long long tmp = n % m;
-        n = m;
-        m = tmp;
+        return (10 * change(n) + (a % 2));
     }
-    return m;
-}
 
-long long is_LCM(long long n, long long m, long long G)
-{
-    long long L = (n * m) / G;
-    return L;
+    return a % 2;
 }
 
 int main()
 {
     long long n = 0;
     long long m = 0;
-    long long G = 0;
-    long long L = 0;
-    // 输入
-    scanf("%lld %lld", &n, &m);
-    // 求最大公约数
-    G = is_GCD(n, m);
-    // 求最小公倍数
-    L = is_LCM(n, m, G);
-    // 输出
-    printf("%lld\n", G + L); 
+    scanf("%lld", &n);
+    m = change(n);
+    printf("%lld", m);
 
     return 0;
 }
