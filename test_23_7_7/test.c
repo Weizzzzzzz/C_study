@@ -75,28 +75,74 @@
 //     return 0;
 // }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-long long change(long long n)
-{
-    long a = 0;
-    a = n % 10;
-    n /= 10;
-    if (n)
-    {
-        return (10 * change(n) + (a % 2));
-    }
+// long long change(long long n)
+// {
+//     long a = 0;
+//     a = n % 10;
+//     n /= 10;
+//     if (n)
+//     {
+//         return (10 * change(n) + (a % 2));
+//     }
 
-    return a % 2;
-}
+//     return a % 2;
+// }
 
-int main()
-{
-    long long n = 0;
-    long long m = 0;
-    scanf("%lld", &n);
-    m = change(n);
-    printf("%lld", m);
+// int main()
+// {
+//     long long n = 0;
+//     long long m = 0;
+//     scanf("%lld", &n);
+//     m = change(n);
+//     printf("%lld", m);
 
-    return 0;
-}
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a, b, c, d;
+//     scanf("%d %d %d %d", &a, &b, &c, &d);
+//     printf("%.1f", a * 0.2 + b * 0.1 + c * 0.2 + d * 0.5);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a, b, c, d;
+//     scanf("%d %d %d %d", &a, &b, &c, &d);
+//     printf("%d", (a + b - c) * d);
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int x1, x2, y1, y2;
+//     scanf("%d %d", &x1, &y1);
+//     scanf("%d %d", &x2, &y2);
+//     printf("%d", (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int a, b;
+//     scanf("%d %d", &a, &b);
+//     printf("%d", (a + b) % 100);
+
+//     return 0;
+// }
+
