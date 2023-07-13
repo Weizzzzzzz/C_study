@@ -66,20 +66,54 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int x, l, r;
+//     scanf("%d %d %d", &x, &l, &r);
+//     if (x >= l && x <= r)
+//     {
+//         printf("true\n");
+//     }
+//     else
+//     {
+//         printf("false\n");
+//     }
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int n = 0;
+//     scanf("%d", &n);
+//     if ((n % 100 != 0 && n % 4 == 0) || n % 400 == 0)
+//     {
+//         printf("yes\n");
+//     }
+//     else
+//     {
+//         printf("no\n");
+//     }
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    int x, l, r;
-    scanf("%d %d %d", &x, &l, &r);
-    if (x >= l && x <= r)
+    char ch = 0;
+    scanf("%c", &ch);
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
     {
-        printf("true\n");
+        printf("YES\n");
     }
     else
     {
-        printf("false\n");
+        printf("NO\n");
     }
-
     return 0;
 }
