@@ -101,19 +101,83 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     char ch = 0;
+//     scanf("%c", &ch);
+//     if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//     {
+//         printf("YES\n");
+//     }
+//     else
+//     {
+//         printf("NO\n");
+//     }
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main() {
+//     int a = 0;
+//     int m = 0;
+//     scanf("%d",&a);
+//     m = a%100;
+//     if((m>=3)&&(m<=5))
+//     {
+//         printf("spring\n");
+//     }
+//     else if((m>=6)&&(m<=8))
+//     {
+//         printf("summer\n");
+//     }
+//     else if((m>=9)&&(m<=11))
+//     {
+//         printf("autumn\n");
+//     }
+//     else {
+//     printf("winter\n");
+//     }
+    
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     float w, h, BMI;
+//     scanf("%f %f", &w, &h);
+//     BMI = w / (h * h);
+//     if ((BMI >= 18.5) && (BMI <= 23.9))
+//     {
+//         printf("Normal\n");
+//     }
+//     else
+//     {
+//         printf("Abnormal\n");
+//     }
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    char ch = 0;
-    scanf("%c", &ch);
-    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    int arr[4];
+    int max = 0;
+    for (int i = 0; i < 4; i++)
     {
-        printf("YES\n");
+        scanf("%d", &arr[i]);
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
     }
-    else
-    {
-        printf("NO\n");
-    }
+    printf("%d", max);
+
     return 0;
 }
