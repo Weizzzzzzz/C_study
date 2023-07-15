@@ -163,21 +163,44 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int arr[4];
+//     int max = 0;
+//     for (int i = 0; i < 4; i++)
+//     {
+//         scanf("%d", &arr[i]);
+//         if (arr[i] > max)
+//         {
+//             max = arr[i];
+//         }
+//     }
+//     printf("%d", max);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    int arr[4];
-    int max = 0;
-    for (int i = 0; i < 4; i++)
+    char n = 0;
+    while ((scanf("%c", &n)) == 1)
     {
-        scanf("%d", &arr[i]);
-        if (arr[i] > max)
+        if (n != '\n')
         {
-            max = arr[i];
+            if (((n >= 'A') && (n <= 'Z')) || ((n >= 'a') && (n <= 'z')))
+            {
+                printf("%c is an alphabet.\n", n);
+            }
+            else
+            {
+                printf("%c is not an alphabet.\n", n);
+            }
         }
     }
-    printf("%d", max);
 
     return 0;
 }
