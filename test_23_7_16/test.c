@@ -173,3 +173,147 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int distance = 0;
+//     int w = 0;
+//     int v = 0;
+//     scanf("%d", &distance);
+//     w = distance / 1;
+//     v = distance / 10 + 10;
+//     if (w > v)
+//     {
+//         printf("v\n");
+//     }
+//     else
+//     {
+//         printf("w\n");
+//     }
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int x, y;
+//     int x1, y1;
+//     scanf("%d %d\n%d %d", &x, &y, &x1, &y1);
+//     if (y1 - y == 1)
+//     {
+//         printf("u\n");
+//     }
+//     if (y1 - y == -1)
+//     {
+//         printf("d\n");
+//     }
+//     if (x1 - x == 1)
+//     {
+//         printf("r\n");
+//     }
+//     if (x1 - x == -1)
+//     {
+//         printf("l\n");
+//     }
+
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int input = 0;
+//     scanf("%d", &input);
+//     switch (input)
+//     {
+//     case 1:
+//         printf("Monday\n");
+//         break;
+//     case 2:
+//         printf("Tuesday\n");
+//         break;
+//     case 3:
+//         printf("Wednesday\n");
+//         break;
+//     case 4:
+//         printf("Thursday\n");
+//         break;
+//     case 5:
+//         printf("Friday\n");
+//         break;
+//     case 6:
+//         printf("Saturday\n");
+//         break;
+//     case 7:
+//         printf("Sunday\n");
+//         break;
+//     default:
+//         break;
+//     }
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int input = 0;
+//     while (scanf("%d", &input) != EOF)
+//     {
+//         switch (input)
+//         {
+//         case 200:
+//             printf("OK\n");
+//             break;
+//         case 202:
+//             printf("Accepted\n");
+//             break;
+//         case 400:
+//             printf("Bad Request\n");
+//             break;
+//         case 403:
+//             printf("Forbidden\n");
+//             break;
+//         case 404:
+//             printf("Not Found\n");
+//             break;
+//         case 500:
+//             printf("Internal Server Error\n");
+//             break;
+//         case 502:
+//             printf("Bad Gateway\n");
+//             break;
+//         default:
+//             break;
+//         }
+//     }
+//     return 0;
+// }
+
+#include <stdio.h>
+
+int main()
+{
+    int t = 0;
+    while (scanf("%d", &t) == 1)
+    {
+        if (t > 0)
+        {
+            printf("1\n");
+        }
+        else if (t == 0)
+        {
+            printf("0.5\n");
+        }
+        else
+        {
+            printf("0\n");
+        }
+    }
+
+    return 0;
+}
