@@ -71,44 +71,76 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+// #include <math.h>
+
+// int main()
+// {
+//     float a = 0.0, b = 0.0, c = .0;
+//     float t = 0.0;
+//     while (scanf("%f %f %f", &a, &b, &c) == 3)
+//     {
+//         t = b * b - 4 * a * c;
+//         if (a == 0)
+//         {
+//             printf("Not quadratic equation\n");
+//         }
+//         else
+//         {
+//             if (t == 0)
+//             {
+//                 if (-b + sqrt(t) == 0)
+//                 {
+//                     printf("x1=x2=%.2f\n", (-b + sqrt(t)));
+//                 }
+//                 else
+//                 {
+//                     printf("x1=x2=%.2f\n", (-b + sqrt(t)) / (2 * a));
+//                 }
+//             }
+//             else if (t > 0)
+//             {
+//                 printf("x1=%.2f;x2=%.2f\n", ((-b) - sqrt(t)) / (2 * a),
+//                        ((-b) + sqrt(t)) / (2 * a));
+//             }
+//             else
+//             {
+//                 printf("x1=%.2f-%.2fi;x2=%.2f+%.2fi\n", (-b) / (2 * a), sqrt(-t) / (2 * a),
+//                        (-b) / (2 * a), sqrt(-t) / (2 * a));
+//             }
+//         }
+//     }
+//     return 0;
+// }
+
 #include <stdio.h>
-#include <math.h>
 
 int main()
 {
-    float a = 0.0, b = 0.0, c = .0;
-    float t = 0.0;
-    while (scanf("%f %f %f", &a, &b, &c) == 3)
+    int y = 0;
+    int m = 0;
+    while (scanf("%4d %d", &y, &m) == 2)
     {
-        t = b * b - 4 * a * c;
-        if (a == 0)
+        if (m == 4 || m == 6 || m == 9 || m == 11)
         {
-            printf("Not quadratic equation\n");
+            printf("30\n");
         }
-        else
+        else if (m == 2)
         {
-            if (t == 0)
+            if (((y % 4 == 0) && (y % 100 != 0)) || y % 400 == 0)
             {
-                if (-b + sqrt(t) == 0)
-                {
-                    printf("x1=x2=%.2f\n", (-b + sqrt(t)));
-                }
-                else
-                {
-                    printf("x1=x2=%.2f\n", (-b + sqrt(t)) / (2 * a));
-                }
-            }
-            else if (t > 0)
-            {
-                printf("x1=%.2f;x2=%.2f\n", ((-b) - sqrt(t)) / (2 * a),
-                       ((-b) + sqrt(t)) / (2 * a));
+                printf("29\n");
             }
             else
             {
-                printf("x1=%.2f-%.2fi;x2=%.2f+%.2fi\n", (-b) / (2 * a), sqrt(-t) / (2 * a),
-                       (-b) / (2 * a), sqrt(-t) / (2 * a));
+                printf("28\n");
             }
         }
+        else
+        {
+            printf("31\n");
+        }
     }
+
     return 0;
 }
