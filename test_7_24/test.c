@@ -272,34 +272,57 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int m = 0;
+//     int n = 0;
+//     int flag = 0;
+//     int a = 0, b = 0, c = 0;
+//     while (scanf("%d %d", &m, &n) == 2)
+//     {
+//         int i = 0;
+//         for (i = m; i <= n; i++)
+//         {
+//             a = i / 100;        // 百位数
+//             b = (i % 100) / 10; // 十位数
+//             c = i % 10;         // 个位数
+//             if (a * a * a + b * b * b + c * c * c == i)
+//             {
+//                 flag += 1;
+//                 printf("%d ", i);
+//             }
+//         }
+//         if (flag == 0)
+//         {
+//             printf("no\n");
+//         }
+//         else
+//             printf("\n");
+//     }
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
-    int m = 0;
-    int n = 0;
-    int flag = 0;
-    int a = 0, b = 0, c = 0;
-    while (scanf("%d %d", &m, &n) == 2)
+    int i = 0;
+    int j = 0;
+    for (i = 10000; i <= 99999; i++)
     {
-        int i = 0;
-        for (i = m; i <= n; i++)
+        int sum = 0;
+
+        for (j = 10; j <= 10000; j *= 10)
         {
-            a = i / 100;        // 百位数
-            b = (i % 100) / 10; // 十位数
-            c = i % 10;         // 个位数
-            if (a * a * a + b * b * b + c * c * c == i)
-            {
-                flag += 1;
-                printf("%d ", i);
-            }
+            sum += (i / j) * (i % j);
         }
-        if (flag == 0)
+        if (sum == i)
         {
-            printf("no\n");
+            printf("%d ", i);
         }
-        else
-            printf("\n");
     }
 
     return 0;
