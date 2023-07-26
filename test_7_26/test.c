@@ -18,6 +18,7 @@ int main()
         {
             // 输出
             printf("%.2f\n", (sum - max - min) / 5.0);
+            //重置
             max = 0;
             min = 100;
             sum = 0;
