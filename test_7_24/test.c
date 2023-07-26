@@ -248,26 +248,59 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int n = 0;
+//     scanf("%d", &n);
+//     int chinese = 0;
+//     int math = 0;
+//     int english = 0;
+//     int average = 0;
+//     int count = 0;
+//     while (scanf("%d %d %d", &chinese, &math, &english) == 3)
+//     {
+//         average = (chinese + math + english) / 3;
+//         if (average < 60)
+//         {
+//             count++;
+//         }
+//     }
+//     printf("%d", count);
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
 {
+    int m = 0;
     int n = 0;
-    scanf("%d", &n);
-    int chinese = 0;
-    int math = 0;
-    int english = 0;
-    int average = 0;
-    int count = 0;
-    while (scanf("%d %d %d", &chinese, &math, &english) == 3)
+    int flag = 0;
+    int a = 0, b = 0, c = 0;
+    while (scanf("%d %d", &m, &n) == 2)
     {
-        average = (chinese + math + english) / 3;
-        if (average < 60)
+        int i = 0;
+        for (i = m; i <= n; i++)
         {
-            count++;
+            a = i / 100;        // 百位数
+            b = (i % 100) / 10; // 十位数
+            c = i % 10;         // 个位数
+            if (a * a * a + b * b * b + c * c * c == i)
+            {
+                flag += 1;
+                printf("%d ", i);
+            }
         }
+        if (flag == 0)
+        {
+            printf("no\n");
+        }
+        else
+            printf("\n");
     }
-    printf("%d", count);
 
     return 0;
 }
