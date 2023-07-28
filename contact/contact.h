@@ -19,23 +19,47 @@ typedef struct PeoInfo
     char addr[MAX_ADDR];
 } PeoInfo;
 
-// å¢å¼ºç¨‹åºå¯ç»´æŠ¤æ€§
+// ÔöÇ¿³ÌĞò¿ÉÎ¬»¤
 typedef PeoInfo SeqListDataType;
 
 typedef struct SeqList
 {
     SeqListDataType *data;
-    int size;     // æ•°æ®ä¸ªæ•°
-    int capacity; // å®¹é‡
+    int size;     // Êı¾İ¸öÊı
+    int capacity; // ÈİÁ¿
 } SL;
 
-// åˆå§‹åŒ–é€šè®¯å½•
+//¼ÓÔØÎÄ¼şµÄĞÅÏ¢µ½Êı¾İ¿â
+void SeqListLoadContact(SL *ps);
+
+// ³õÊ¼»¯Í¨Ñ¶Â¼
 void SeqListInit(SL *ps);
-//æ‰©å®¹
+// À©Èİ
 void SeqListCheckCapcity(SL *ps);
-//æ‰“å°é€šè®¯å½•
+// ´òÓ¡Í¨Ñ¶Â¼
 void SeqListPrint(SL *ps);
-// å°¾éƒ¨æ’å…¥æ•°æ®
+// Î²²¿Ìí¼ÓÊı¾İ
 void SeqListPushBack(SL *ps);
-// å¤´éƒ¨æ’å…¥æ•°æ®
+// Í·²¿Ìí¼ÓÊı¾İ
 void SeqListPushFront(SL *ps);
+//ÔÚÖ¸¶¨Î»ÖÃÌí¼ÓÊı¾İ
+void SeqListInsert(SL *ps, int pos);
+
+// Î²²¿É¾³ıÊı¾İ
+void SeqListPopBack(SL *ps);
+//Í·²¿É¾³ıÊı¾İ
+void SeqListPopFront(SL *ps);
+//ÔÚÖ¸¶¨Î»ÖÃÉ¾³ıÊı¾İ
+void SeqListErase(SL *ps, int pos);
+
+//²éÕÒÊı¾İ
+void SeqListSearchContact(SL *ps);
+
+//ĞŞ¸ÄÊı¾İ
+void SeqListModifyContact(SL *ps);
+
+// ±£´æÍ¨Ñ¶Â¼µÄĞÅÏ¢µ½ÎÄ¼ş
+void SeqListSaveContact(const SL *ps);
+
+// Ïú»ÙÍ¨Ñ¶Â¼
+void SeqListDestroyContact(SL*ps);

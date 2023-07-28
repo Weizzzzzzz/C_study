@@ -1,24 +1,18 @@
 #include "contact.h"
 
-void SeqListInit(SL *ps)
-{
-    assert(ps);
-    ps->data = NULL;
-    ps->size = 0;
-    ps->capacity = 0;
-}
-
+// À©Èİ
 void SeqListCheckCapcity(SL *ps)
 {
     assert(ps);
-    // æ»¡äº†å°±æ‰©å®¹
+
+    // ÂúÁË¾ÍÀ©Èİ
     if (ps->size == ps->capacity)
     {
         int newcapacity = ps->capacity == 0 ? 4 : ps->capacity * 2;
         SeqListDataType *tmp = (SeqListDataType *)realloc(ps->data, (size_t)newcapacity * sizeof(SeqListDataType));
         if (tmp == NULL)
         {
-            perror("SeqListCheckCapcity");
+            printf("CheckCapcity Fail\n");
             exit(-1);
         }
         else
@@ -29,53 +23,255 @@ void SeqListCheckCapcity(SL *ps)
     }
 }
 
+// ¼ÓÔØÎÄ¼şµÄĞÅÏ¢µ½Êı¾İ¿â
+void SeqListLoadContact(SL *ps)
+{
+    FILE *pfRead = fopen("contact.txt", "rb");
+    if(pfRead==NULL)
+    {
+        printf("LoadContact Fail\n");
+        exit(-1);
+    }
+    SeqListDataType tmp = {0};
+    while (fread(&tmp, sizeof(PeoInfo), 1, pfRead) == 1)
+    {
+        SeqListCheckCapcity(ps);
+
+        ps->data[ps->size] = tmp;
+        ps->size++;
+    }
+
+    fclose(pfRead);
+    pfRead = NULL;
+}
+
+// ³õÊ¼»¯Í¨Ñ¶Â¼
+void SeqListInit(SL *ps)
+{
+    assert(ps);
+
+    ps->data = NULL;
+    ps->size = 0;
+    ps->capacity = 0;
+}
+
+// ´òÓ¡Í¨Ñ¶Â¼
 void SeqListPrint(SL *ps)
 {
     assert(ps);
-    printf("%-20s\t%-5s\t%-5s\t%-12s\t%-30s\n", "åå­—", "å¹´é¾„", "æ€§åˆ«", "ç”µè¯", "åœ°å€");
+
+    printf("\t %-20s\t%-5s\t%-5s\t%-12s\t%-30s\n", "ĞÕÃû", "ÄêÁä", "ĞÔ±ğ", "µç»°", "µØÖ·");
     int i = 0;
     for (i = 0; i < ps->size; i++)
     {
-        printf("%-20s\t%-5d\t%-5s\t%-12s\t%-30s\n", ps->data[i].name, ps->data[i].age, ps->data[i].sex, ps->data[i].tele, ps->data[i].addr);
+        printf("%4d:%-20s\t%-5d\t%-5s\t%-12s\t%-30s\n", i + 1, ps->data[i].name, ps->data[i].age, ps->data[i].sex, ps->data[i].tele, ps->data[i].addr);
     }
 }
 
+// Î²²¿Ìí¼ÓÊı¾İ
 void SeqListPushBack(SL *ps)
 {
-    assert(ps);
-    SeqListCheckCapcity(ps);
-    printf("è¯·è¾“å…¥åå­—:>\n");
-    scanf("%s", ps->data[ps->size].name);
-    printf("è¯·è¾“å…¥å¹´é¾„:>\n");
-    scanf("%d", &(ps->data[ps->size].age));
-    printf("è¯·è¾“å…¥æ€§åˆ«:>\n");
-    scanf("%s", ps->data[ps->size].sex);
-    printf("è¯·è¾“å…¥ç”µè¯:>\n");
-    printf("%s", ps->data[ps->size].tele);
-    printf("è¯·è¾“å…¥åœ°å€:>\n");
-    printf("%s", ps->data[ps->size].addr);
-    ps->size++;
+    // assert(ps);
+    // SeqListCheckCapcity(ps);
+
+    // printf("ÇëÊäÈëĞÕÃû:>\n");
+    // scanf("%s", ps->data[ps->size].name);
+    // printf("ÇëÊäÈëÄêÁä:>\n");
+    // scanf("%d", &(ps->data[ps->size].age));
+    // printf("ÇëÊäÈëĞÔ±ğ:>\n");
+    // scanf("%s", ps->data[ps->size].sex);
+    // printf("ÇëÊäÈëµç»°:>\n");
+    // scanf("%s", ps->data[ps->size].tele);
+    // printf("ÇëÊäÈëµØÖ·:>\n");
+    // scanf("%s", ps->data[ps->size].addr);
+    // ps->size++;
+    SeqListInsert(ps, ps->size);
 }
 
+// Í·²¿Ìí¼ÓÊı¾İ
 void SeqListPushFront(SL *ps)
 {
+    // assert(ps);
+    // SeqListCheckCapcity(ps);
+
+    // int end = ps->size - 1;
+    // while (end >= 0)
+    // {
+    //     ps->data[end + 1] = ps->data[end];
+    //     end--;
+    // }
+    // printf("ÇëÊäÈëĞÕÃû:>\n");
+    // scanf("%s", ps->data[ps->size].name);
+    // printf("ÇëÊäÈëÄêÁä:>\n");
+    // scanf("%d", &(ps->data[ps->size].age));
+    // printf("ÇëÊäÈëĞÔ±ğ:>\n");
+    // scanf("%s", ps->data[ps->size].sex);
+    // printf("ÇëÊäÈëµç»°:>\n");
+    // scanf("%s", ps->data[ps->size].tele);
+    // printf("ÇëÊäÈëµØÖ·:>\n");
+    // scanf("%s", ps->data[ps->size].addr);
+    // ps->size++;
+
+    SeqListInsert(ps, 0);
+}
+
+// ÔÚÖ¸¶¨Î»ÖÃÌí¼ÓÊı¾İ
+void SeqListInsert(SL *ps, int pos)
+{
     assert(ps);
+    assert(pos <= ps->size);
     SeqListCheckCapcity(ps);
+
     int end = ps->size - 1;
-    while (end >= 0)
+    while (end >= pos)
     {
         ps->data[end + 1] = ps->data[end];
         end--;
     }
-    printf("è¯·è¾“å…¥åå­—:>\n");
-    scanf("%s", ps->data[ps->size].name);
-    printf("è¯·è¾“å…¥å¹´é¾„:>\n");
-    scanf("%d", &(ps->data[ps->size].age));
-    printf("è¯·è¾“å…¥æ€§åˆ«:>\n");
-    scanf("%s", ps->data[ps->size].sex);
-    printf("è¯·è¾“å…¥ç”µè¯:>\n");
-    printf("%s", ps->data[ps->size].tele);
-    printf("è¯·è¾“å…¥åœ°å€:>\n");
-    printf("%s", ps->data[ps->size].addr);
+    printf("ÇëÊäÈëĞÕÃû:>\n");
+    scanf("%s", ps->data[pos].name);
+    printf("ÇëÊäÈëÄêÁä:>\n");
+    scanf("%d", &(ps->data[pos].age));
+    printf("ÇëÊäÈëĞÔ±ğ:>\n");
+    scanf("%s", ps->data[pos].sex);
+    printf("ÇëÊäÈëµç»°:>\n");
+    scanf("%s", ps->data[pos].tele);
+    printf("ÇëÊäÈëµØÖ·:>\n");
+    scanf("%s", ps->data[pos].addr);
     ps->size++;
+}
+
+// Î²²¿É¾³ıÊı¾İ
+void SeqListPopBack(SL *ps)
+{
+    // assert(ps);
+    // assert(ps->size > 0);
+
+    // ps->size--;
+    SeqListErase(ps, ps->size);
+}
+
+// Í·²¿É¾³ıÊı¾İ
+void SeqListPopFront(SL *ps)
+{
+    // assert(ps);
+    // assert(ps->size > 0);
+
+    // int start = 1;
+    // while (start < ps->size)
+    // {
+    //     ps->data[start - 1] = ps->data[start];
+    //     start++;
+    // }
+    // ps->size--;
+    SeqListErase(ps, 0);
+}
+
+// ÔÚÖ¸¶¨Î»ÖÃÉ¾³ıÊı¾İ
+void SeqListErase(SL *ps, int pos)
+{
+    assert(ps);
+    assert(ps->size > 0);
+
+    int start = pos;
+    while (start < ps->size)
+    {
+        ps->data[start] = ps->data[start];
+        start++;
+    }
+    ps->size--;
+}
+
+// ²éÕÒÊı¾İ
+//°´Ãû×Ö²éÕÒ
+static int FindBName(SL *ps, char name[])
+{
+    int i = 0;
+    for (i = 0; i < ps->size;i++)
+    {
+        if(0==strcmp(ps->data[i].name,name))
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void SeqListSearchContact(SL *ps)
+{
+    assert(ps);
+
+    char name[MAX_NAME] = {0};
+    printf("ÇëÊäÈëÒª²éÕÒÈËµÄĞÕÃû:>\n");
+    scanf("%s", name);
+    // ²éÕÒ
+    int pos = FindBName(ps, name);
+    if(-1==pos)
+    {
+        printf("Òª²éÕÒµÄÈË²»´æÔÚ\n");
+        return;
+    }
+    printf("%-20s\t%-5s\t%-5s\t%-12s\t%-30s\n", "ĞÕÃû", "ÄêÁä", "ĞÔ±ğ", "µç»°", "µØÖ·");
+    printf("%-20s\t%-5d\t%-5s\t%-12s\t%-30s\n", ps->data[pos].name, ps->data[pos].age, ps->data[pos].sex, ps->data[pos].tele, ps->data[pos].addr);
+}
+
+// ĞŞ¸ÄÊı¾İ
+void SeqListModifyContact(SL *ps)
+{
+    assert(ps);
+
+    char name[MAX_NAME] = {0};
+    printf("ÇëÊäÈëÒª²éÕÒÈËµÄĞÕÃû:>\n");
+    scanf("%s", name);
+    //²éÕÒ
+    int pos = FindBName(ps, name);
+    if (-1 == pos)
+    {
+        printf("ÒªĞŞ¸ÄµÄÈË²»´æÔÚ\n");
+        return;
+    }
+    //ĞŞ¸Ä
+    printf("ÏÂÃæ¿ªÊ¼ĞŞ¸Ä\n");
+
+    printf("ÇëÊäÈëĞÕÃû:>\n");
+    scanf("%s", ps->data[pos].name);
+    printf("ÇëÊäÈëÄêÁä:>\n");
+    scanf("%d", &(ps->data[pos].age));
+    printf("ÇëÊäÈëĞÔ±ğ:>\n");
+    scanf("%s", ps->data[pos].sex);
+    printf("ÇëÊäÈëµç»°:>\n");
+    scanf("%s", ps->data[pos].tele);
+    printf("ÇëÊäÈëµØÖ·:>\n");
+    scanf("%s", ps->data[pos].addr);
+
+    printf("ĞŞ¸Ä³É¹¦\n");
+}
+
+// ±£´æÍ¨Ñ¶Â¼µÄĞÅÏ¢µ½ÎÄ¼ş
+void SeqListSaveContact(const SL *ps)
+{
+    assert(ps);
+    FILE *pfWrite = fopen("contact.txt", "wb");
+    if (pfWrite == NULL)
+    {
+        perror("SaveContact");
+        return;
+    }
+    // Ğ´ÎÄ¼ş-¶ş½øÖÆµÄĞÎÊ½
+    int i = 0;
+    for (i = 0; i < ps->size; i++)
+    {
+        fwrite(ps->data + i, sizeof(PeoInfo), 1, pfWrite);
+    }
+
+    fclose(pfWrite);
+    pfWrite = NULL;
+}
+
+// Ïú»ÙÍ¨Ñ¶Â¼
+void SeqListDestroyContact(SL *ps)
+{
+    assert(ps);
+    free(ps->data);
+    ps->data = NULL;
 }
