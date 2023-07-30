@@ -44,20 +44,70 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+// void print(int x)
+// {
+//     if (x > 5)
+//     {
+//         print(x / 6);
+//     }
+//     printf("%d", x % 6);
+// }
+
+// int main()
+// {
+//     int n = 0;
+//     scanf("%d", &n);
+//     print(n);
+//     return 0;
+// }
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int date = 0;
+//     int k = 1;
+//     int sum = 0;
+//     scanf("%d", &date);
+//     for (int i = 1; k <= date; i++)
+//     {
+//         for (int j = 0; j < i; j++)
+//         {
+//             if (k > date)
+//             {
+//                 break;
+//             }
+//             sum += i;
+//             k++;
+//         }
+//     }
+//     printf("%d", sum);
+
+//     return 0;
+// }
+
 #include <stdio.h>
-void print(int x)
-{
-    if (x > 5)
-    {
-        print(x / 6);
-    }
-    printf("%d", x % 6);
-}
 
 int main()
 {
     int n = 0;
+    int num = 0;
     scanf("%d", &n);
-    print(n);
+    for (int i = 1; i <= n; i++)
+    {
+        int reverse = 0;
+        num = i;
+        while (num)
+        {
+            reverse = reverse * 10 + num % 10;
+            num /= 10;
+        }
+        if (reverse == i)
+        {
+            printf("%d\n", i);
+        }
+    }
+
     return 0;
 }
