@@ -75,6 +75,31 @@
 //     return 0;
 // }
 
+// #include <stdio.h>
+
+// int main()
+// {
+//     int side = 0;
+//     while (scanf("%d", &side) == 1)
+//     {
+//         for (int i = 0; i < side; i++)
+//         {
+//             int j = 0;
+//             for (j = 0; j < side - 1 - i; j++)
+//             {
+//                 printf("  ");
+//             }
+//             for (; j < side; j++)
+//             {
+//                 printf("* ");
+//             }
+//             printf("\n");
+//         }
+//     }
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
 int main()
@@ -87,9 +112,9 @@ int main()
             int j = 0;
             for (j = 0; j < side - 1 - i; j++)
             {
-                printf("  ");
+                printf(" ");
             }
-            for (; j < side; j++)
+            for (j = 0; j <= i; j++)
             {
                 printf("* ");
             }
